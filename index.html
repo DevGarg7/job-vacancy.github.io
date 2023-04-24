@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YTBLNHBHVkdvM2JWUEt2djhzWWZGN2ZZME5QcDZTcGtvblRlUTI2Qw&libraries=places"></script>
+
+
+
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <h2 class="navbar-logo"><a href="#">DREAMS TIME</a></h2>
+            <div class="navbar-menu">
+                <a href="#jobs">Jobs</a>
+                <a href="#companies">Companies</a>
+                <a href="testimoni">Testimonial</a>
+                <a href="#blog">Blogs</a>
+                <a href="#">Sign In</a>
+            </div>
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+    </nav>
+
+    <!-- header -->
+    <header>
+        <h1 class="header-title">
+            FIND YOUR <br> <span>PERFECT JOB</span></br> EASILY
+        </h1>
+    </header>
+    <!-- search -->
+    <div class="search-wrapper">
+        <div class="search-box">
+            <div class="search-card">
+                <input class="search-input" type="text" placeholder="Job Title or Keywords"  id="search-job">
+                <div class="divider">
+                    
+                </div>
+                <input type="text" class="search-location-input" id="location" placeholder="Location">
+                <div class="divider"></div>
+                <button class="search-button" id ="search-button" onclick="search()">Search</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- filter box -->
+    <div class="filter-box">
+        <div class="filter-dropdown">
+            <select name="job-level" id="job-level" class="filter-select">
+                <option>Job Level</option>
+                <option>Entry</option>
+                <option>Mid-Senior</option>
+                <option>Director</option>
+            </select>
+            <select name="job-function" id="job-function" class="filter-select">
+                <option>Job Function</option>
+                <option>IT</option>
+                <option>Management</option>
+                <option>Education</option>
+            </select> 
+            <select name="employment" id="employment" class="filter-select">
+                <option>Employment Type</option>
+                <option>Internship</option>
+                <option>Part Time</option>
+                <option>Full Time</option>
+            </select>
+            <!-- <select name="location" id="location" class="filter-select">
+                <option>Locations</option>
+                <option>Remote</option>
+                <option>US</option>
+                <option>UK</option>
+            </select> -->
+            <select name="Education" id="Education" class="filter-select">
+                <option>Education</option>
+                <option>High School</option>
+                <option>Bachelor's Degree</option>
+                <option>Master's Degree</option>
+            </select>
+        </div>
+
+
+
+
+        <div class="filter-chosen">
+            <!-- <div class="chosen-card">
+                Remote <i class="fas fa-times-circle"></i>
+            </div>
+            <div class="chosen-card">
+                Full time<i class="fas fa-times-circle"></i>
+            </div>
+            <div class="chosen-card">
+                Financial Tech <i class="fas fa-times-circle"></i>
+            </div>
+            <div class="chosen-card">
+                Entry Level <i class="fas fa-times-circle"></i> 
+            </div>-->
+        </div>
+    </div>
+    <!-- job listing -->
+    <section class="job-list" id="jobs">
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/tesla.png" class="job-profile">
+                <div class="job-detail">
+                    <h4>Tesla</h4>
+                    <h3>Mechanical Engineer</h3>
+                     <div> <i class="fa-solid fa-user"></i> 1-3 Yrs</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>India</h4>
+
+
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+
+
+                Part-Time
+
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/ebay.png" class="job-profile">
+                <div class="job-detail">
+                    <h4>Ebay</h4>
+                    <h3>Business Development</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>India</h4>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+                Internship
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/TikTok.svg" class="job-profile">
+                <div class="job-detail">
+                    <h4>Tiktok</h4>
+                    <h3>Digital Marketing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>UK</h4>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+                Part-Time
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/youtube.png" class="job-profile">
+                <div class="job-detail">
+                    <h4>Youtube</h4>
+                    <h3>UI UX Designer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>USA</h4>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+                Full-Time
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/amazon.webp" class="job-profile">
+                <div class="job-detail">
+                    <h4>Amazon</h4>
+                    <h3>Software Engineer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Australia</h4>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+                Full-Time
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/tesla.png" class="job-profile">
+                <div class="job-detail">
+                    <h4>Tesla</h4>
+                    <h3>Mechanical Engineer</h3>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Australia</h4>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+                Part-Time
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/tesla.png" class="job-profile">
+                <div class="job-detail">
+                    <h4>Tesla</h4>
+                    <h3>Mechanical Engineer</h3>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Australia</h4>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+                Internship
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/tesla.png" class="job-profile">
+                <div class="job-detail">
+                    <h4>Tesla</h4>
+                    <h3>Mechanical Engineer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>India</h4>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+                Internship
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/tesla.png" class="job-profile">
+                <div class="job-detail">
+                    <h4>Tesla</h4>
+                    <h3>Mechanical Engineer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>India</h4>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+                Internship
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/tesla.png" class="job-profile">
+                <div class="job-detail">
+                    <h4>Tesla</h4>
+                    <h3>Mechanical Engineer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>UK</h4>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+                Internship
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img src="images/tesla.png" class="job-profile">
+                <div class="job-detail">
+                    <h4>Tesla</h4>
+                    <h3>Mechanical Engineer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>UK</h4>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a href="#" class="label-b">CSS</a>
+                <a href="#" class="label-c">Javascript</a>
+            </div>
+            <div class="job-type">
+                Internship
+            </div>
+        </div>
+
+
+    </section>
+    <!-- join -->
+    <section class="join">
+        <div class="join-detail">
+            <h1 class="section-title">LETS START YOUR NEW JOB WITH US</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, suscipit ipsam? Ullam natus eveniet esse
+                fugiat saepe iste</p>
+        </div>
+        <button class="join-button">Join Now</button>
+
+    </section>
+</body>
+<script>
+
+    function search() {
+  var filter = document.getElementById("search-job").value.toUpperCase();
+  var jobs = document.getElementsByClassName("job-card");
+
+  for (var i = 0; i < jobs.length; i++) {
+    var jobTitle = jobs[i].getElementsByClassName("job-detail")[0].getElementsByTagName("h3")[0];
+    var keywords = jobs[i].getElementsByClassName("job-label")[0].getElementsByTagName("a");
+    var found = false;
+
+    if (jobTitle.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      found = true;
+    } else {
+      for (var j = 0; j < keywords.length; j++) {
+        if (keywords[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          found = true;
+          break;
+        }
+      }
+    }
+
+    if (found) {
+      jobs[i].style.display = "";
+    } else {
+      jobs[i].style.display = "none";
+    }
+  }
+
+}
+
+  
+
+
+
+
+
+</script>
+
+</html>
