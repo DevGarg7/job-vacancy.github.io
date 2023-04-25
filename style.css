@@ -152,7 +152,7 @@ header{
 }
 
 .filter-dropdown {
-    width: 80%;
+    width: 100%;
     border-bottom: 1px solid var(--labelColor);
     display: flex;
     justify-content: flex-start;
