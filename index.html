@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <!--font-->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito&display=swap" rel="stylesheet"> -->
     <!-- icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Document</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YTBLNHBHVkdvM2JWUEt2djhzWWZGN2ZZME5QcDZTcGtvblRlUTI2Qw&libraries=places"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YTBLNHBHVkdvM2JWUEt2djhzWWZGN2ZZME5QcDZTcGtvblRlUTI2Qw&libraries=places"></script> -->
 
 
 
@@ -143,7 +143,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
-                    <h4>India</h4>
+                    <h4>France</h4>
                 </div>
             </div>
             <div class="job-label">
@@ -167,7 +167,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
-                    <h4>UK</h4>
+                    <h4>Japan</h4>
                 </div>
             </div>
             <div class="job-label">
@@ -191,7 +191,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
-                    <h4>USA</h4>
+                    <h4>India</h4>
                 </div>
             </div>
             <div class="job-label">
@@ -259,7 +259,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
-                    <h4>Australia</h4>
+                    <h4>Japan</h4>
                 </div>
             </div>
             <div class="job-label">
@@ -301,7 +301,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
-                    <h4>India</h4>
+                    <h4>United States</h4>
                 </div>
             </div>
             <div class="job-label">
@@ -322,7 +322,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
-                    <h4>UK</h4>
+                    <h4>United Kingdom</h4>
                 </div>
             </div>
             <div class="job-label">
@@ -343,7 +343,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
-                    <h4>UK</h4>
+                    <h4>United Kingdom</h4>
                 </div>
             </div>
             <div class="job-label">
@@ -369,12 +369,55 @@
 </body>
 <script>
 
+
+var headers = new Headers();
+headers.append("X-CSCAPI-KEY", "YTBLNHBHVkdvM2JWUEt2djhzWWZGN2ZZME5QcDZTcGtvblRlUTI2Qw==");
+
+var requestOptions = {
+  method: 'GET',
+  headers: headers,
+  redirect: 'follow'
+};
+
+fetch("https://api.countrystatecity.in/v1/countries", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+    var countries = result.map(item => item.name);
+    var input = document.getElementById("location");
+    input.setAttribute("list", "country-list");
+
+    var datalist = document.createElement("datalist");
+    datalist.id = "country-list";
+    countries.forEach(function(country) {
+      var option = document.createElement("option");
+      option.value = country;
+      datalist.appendChild(option);
+    });
+    document.body.appendChild(datalist);
+    input.addEventListener("input", function() {
+      var value = input.value;
+      var filtered = countries.filter(function(country) {
+        return country.toLowerCase().startsWith(value.toLowerCase());
+      });
+      datalist.innerHTML = "";
+      filtered.forEach(function(country) {
+        var option = document.createElement("option");
+        option.value = country;
+        datalist.appendChild(option);
+      });
+    });
+  })
+  .catch(error => console.log('error', error));
+
     function search() {
   var filter = document.getElementById("search-job").value.toUpperCase();
   var filter2 = document.getElementById("job-function").value.toUpperCase();
   var filter3 = document.getElementById("job-level").value.toUpperCase();
   var filter4 = document.getElementById("employment").value.toUpperCase();
+  var filter5 = document.getElementById("location").value.toUpperCase();
   var jobs = document.getElementsByClassName("job-card");
+
+        
 
   for (var i = 0; i < jobs.length; i++) {
     var jobTitle = jobs[i].getElementsByClassName("job-detail")[0].getElementsByTagName("h3")[0];
@@ -382,11 +425,23 @@
     var jobfunction = jobs[i].getElementsByClassName("job-function")[0].getElementsByTagName("a")[0];
     var joblevel = jobs[i].getElementsByClassName("job-level")[0].getElementsByTagName("a")[0];
     var employment = jobs[i].getElementsByClassName("job-type")[0];
+    var jobdetail = jobs[i].getElementsByClassName("job-detail")[0].getElementsByTagName("h4")[1];
+    
     var found = false;
     var found2 = false;
     var found3 = false;
     var found4 = false;
-    console.log(employment.innerHTML.toUpperCase())
+    var found5 = false;
+
+
+    if(jobdetail.innerHTML.toUpperCase().indexOf(filter5) > -1){
+         found5=true;
+     }else{
+         found5=false;
+     }
+
+
+
 
      if(employment.innerHTML.toUpperCase().indexOf(filter4) > -1){
          found4=true;
@@ -422,14 +477,8 @@
     }
           
 
-    if (found2&&found3&&found4) {
-      jobs[i].style.display = "";
-    } else {
-      jobs[i].style.display = "none";
-    }
 
-
-    if (found) {
+    if (found||(found5&&found4&&found3&&found2)) {
       jobs[i].style.display = "";
     } else {
       jobs[i].style.display = "none";
