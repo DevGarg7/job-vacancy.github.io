@@ -46,7 +46,7 @@
     <div class="search-wrapper">
         <div class="search-box">
             <div class="search-card">
-                <input class="search-input" type="text" placeholder="Job Title or Keywords"  id="search-job">
+                <input class="search-input" type="text" placeholder="Job Title or Keywords"  id="search-job" onkeyup="search()">
                 <div class="divider">
                     
                 </div>
@@ -65,23 +65,23 @@
         <div class="filter-dropdown">
             <select name="job-level" id="job-level" class="filter-select">
                 <option value="Experience">Experience</option>
-                <option>Fresher</option>
-                <option>Less than 5 years Experience</option>
-                <option>Less than 10 years Experience</option>
-                <option>More than 10 years Experience</option>
+                <option value="Freshers">Fresher</option>
+                <option value="Experience : 3+ years">More than 3 years Experience</option>
+                <option value="Experience : 5+ years">More than 5 years Experience</option>
+                <option value="Experience : 10+ years">More than 10 years Experience</option>
                 
             </select>
             <select name="job-function" id="job-function" class="filter-select">
                 <option>Job Function</option>
-                <option>IT</option>
-                <option>Management</option>
-                <option>Core</option>
+                <option value="IT">IT</option>
+                <option value="Management">Management</option>
+                <option value="Core">Core</option>
             </select> 
             <select name="employment" id="employment" class="filter-select">
                 <option>Employment Type</option>
-                <option>Internship</option>
-                <option>Part Time</option>
-                <option>Full Time</option>
+                <option value="Internship">Internship</option>
+                <option value="Part-Time">Part-Time</option>
+                <option value="Full-Time">Full=Time</option>
             </select>
         </div>
 
@@ -112,8 +112,8 @@
                     <h4>Tesla</h4>
                     <h3>Mechanical Engineer</h3>
                     <br>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a>Core<a></div>
-                     <div> <i class="fa-solid fa-user"></i><a> Freshers</a></div>
+                    <div  class="job-function"><i class="fa-solid fa-filter"></i> <a>Core</a></div>
+                     <div class="job-level"> <i class="fa-solid fa-user"></i><a>Freshers</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -127,12 +127,7 @@
                 <a href="#" class="label-b">Creativity</a>
                 <a href="#" class="label-c">Workflow Development</a>
             </div>
-            <div class="job-type">
-
-
-                Part-Time
-
-            </div>
+            <div class="job-type">Internship</div>
         </div>
 
         <div class="job-card">
@@ -142,9 +137,9 @@
                     <h4>Ebay</h4>
                     <h3>Business Development</h3>
                     <br>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a>Management<a></div>
+                    <div class="job-function"><i class="fa-solid fa-filter"></i> <a>Management</a></div>
 
-                    <div> <i class="fa-solid fa-user"></i><a> Experience : 10+ years</a></div>
+                    <div  class="job-level"> <i class="fa-solid fa-user"></i><a>Experience : 10+ years</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -156,9 +151,7 @@
                 <a href="#" class="label-b">Tally</a>
                 <a href="#" class="label-c">Typing Techniques</a>
             </div>
-            <div class="job-type">
-                Internship
-            </div>
+            <div class="job-type">Full-Time </div>
         </div>
 
         <div class="job-card">
@@ -168,9 +161,9 @@
                     <h4>Tiktok</h4>
                     <h3>Digital Marketing</h3>
                     <br>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a>Management<a></div>
+                    <div  class="job-function"><i class="fa-solid fa-filter"></i> <a>Management</a></div>
                     
-                    <div> <i class="fa-solid fa-user"></i> <a>Experience : 5+ years</a></div>
+                    <div   class="job-level"> <i class="fa-solid fa-user"></i> <a>Experience : 5+ years</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -182,9 +175,7 @@
                 <a href="#" class="label-b">Design</a>
                 <a href="#" class="label-c">Ad Servicing</a>
             </div>
-            <div class="job-type">
-                Part-Time
-            </div>
+            <div class="job-type">Part-Time</div>
         </div>
 
         <div class="job-card">
@@ -194,9 +185,9 @@
                     <h4>Youtube</h4>
                     <h3>UI UX Designer</h3>
                     <br>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a>IT<a></div>
+                    <div class="job-function"><i class="fa-solid fa-filter"></i> <a>IT</a></div>
 
-                    <div> <i class="fa-solid fa-user"></i> <a> Freshers</a></div>
+                    <div  class="job-level"> <i class="fa-solid fa-user"></i> <a>Freshers</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -208,9 +199,7 @@
                 <a href="#" class="label-b">ProtoTyping</a>
                 <a href="#" class="label-c">Creativity</a>
             </div>
-            <div class="job-type">
-                Full-Time
-            </div>
+            <div class="job-type">Internship</div>
         </div>
 
         <div class="job-card">
@@ -220,9 +209,9 @@
                     <h4>Amazon</h4>
                     <h3>Software Engineer</h3>
                     <br>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a>IT<a></div>
+                    <div class="job-function"><i class="fa-solid fa-filter"></i> <a>IT</a></div>
 
-                    <div> <i class="fa-solid fa-user"></i><a> Freshers</a></div>
+                    <div  class="job-level"> <i class="fa-solid fa-user"></i><a>Freshers</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -234,9 +223,7 @@
                 <a href="#" class="label-b">Oops</a>
                 <a href="#" class="label-c">Operating System</a>
             </div>
-            <div class="job-type">
-                Full-Time
-            </div>
+            <div class="job-type">Full-Time</div>
         </div>
         <div class="job-card">
             <div class="job-name">
@@ -245,9 +232,9 @@
                     <h4>Apple</h4>
                     <h3>Web Developer</h3>
                     <br>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a>IT<a></div>
+                    <div class="job-function"><i class="fa-solid fa-filter"></i> <a>IT</a></div>
 
-                    <div> <i class="fa-solid fa-user"></i><a> Experience : 3+ years</a></div>
+                    <div  class="job-level"> <i class="fa-solid fa-user"></i><a>Experience : 3+ years</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -259,9 +246,7 @@
                 <a href="#" class="label-b">CSS</a>
                 <a href="#" class="label-c">Javascript</a>
             </div>
-            <div class="job-type">
-                Part-Time
-            </div>
+            <div class="job-type">Part-Time</div>
         </div>
         <div class="job-card">
             <div class="job-name">
@@ -269,8 +254,8 @@
                 <div class="job-detail">
                     <h4>Coca-Cola</h4>
                     <h3>Sales Executive</h3>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a>Management<a></div>
-                    <div> <i class="fa-solid fa-user"></i><a> Experience : 10+ years</a></div>
+                    <div class="job-function"><i class="fa-solid fa-filter"></i> <a>Management</a></div>
+                    <div  class="job-level"> <i class="fa-solid fa-user"></i><a>Experience : 10+ years</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -282,9 +267,7 @@
                 <a href="#" class="label-b">Negotiation</a>
                 <a href="#" class="label-c">MS Excel</a>
             </div>
-            <div class="job-type">
-                Internship
-            </div>
+            <div class="job-type">Full-Time</div>
         </div>
         <div class="job-card">
             <div class="job-name">
@@ -292,8 +275,8 @@
                 <div class="job-detail">
                     <h4>Facebook</h4>
                     <h3>Software Engineer</h3>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a> IT<a></div>
-                    <div> <i class="fa-solid fa-user"></i><a> Freshers</a></div>
+                    <div class="job-function"><i class="fa-solid fa-filter"></i> <a>IT</a></div>
+                    <div  class="job-level"> <i class="fa-solid fa-user"></i><a>Freshers</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -305,9 +288,7 @@
                 <a href="#" class="label-b">Artificial Intelligence</a>
                 <a href="#" class="label-c">Machine Learning</a>
             </div>
-            <div class="job-type">
-                Internship
-            </div>
+            <div class="job-type">Full-Time</div>
         </div>
         <div class="job-card">
             <div class="job-name">
@@ -315,8 +296,8 @@
                 <div class="job-detail">
                     <h4>Intel</h4>
                     <h3>Software Engineer</h3>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a> IT<a></div>
-                    <div> <i class="fa-solid fa-user"></i><a> Experience : 5+ years</a></div>
+                    <div class="job-function"><i class="fa-solid fa-filter"></i> <a>IT</a></div>
+                    <div  class="job-level"> <i class="fa-solid fa-user"></i><a>Experience : 5+ years</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -328,9 +309,7 @@
                 <a href="#" class="label-b">SDLC</a>
                 <a href="#" class="label-c">Object-Oriented-Design</a>
             </div>
-            <div class="job-type">
-                Internship
-            </div>
+            <div class="job-type">Full-Time</div>
         </div>
         <div class="job-card">
             <div class="job-name">
@@ -338,8 +317,8 @@
                 <div class="job-detail">
                     <h4>Mc-Donalds</h4>
                     <h3>App Developer</h3>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a>IT<a></div>
-                    <div> <i class="fa-solid fa-user"></i><a> Experience : 5+ years</a></div>
+                    <div class="job-function"><i class="fa-solid fa-filter"></i> <a>IT</a></div>
+                    <div  class="job-level"> <i class="fa-solid fa-user"></i><a>Experience : 5+ years</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -351,9 +330,7 @@
                 <a href="#" class="label-b">XML</a>
                 <a href="#" class="label-c">Android-Studio</a>
             </div>
-            <div class="job-type">
-                Internship
-            </div>
+            <div class="job-type">Full-Time</div>
         </div>
         <div class="job-card">
             <div class="job-name">
@@ -361,8 +338,8 @@
                 <div class="job-detail">
                     <h4>Microsoft</h4>
                     <h3>Web Developer</h3>
-                    <div id="job-function" class="job-function"><i class="fa-solid fa-filter"></i> <a>IT<a></div>
-                    <div> <i class="fa-solid fa-user"></i><a> Experience : 10+ years</a></div>
+                    <div class="job-function"><i class="fa-solid fa-filter"></i> <a>IT</a></div>
+                    <div  class="job-level"> <i class="fa-solid fa-user"></i><a>Experience : 10+ years</a></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br>
                     <i class="fa-solid fa-location-dot"></i>
@@ -374,9 +351,7 @@
                 <a href="#" class="label-b">PHP</a>
                 <a href="#" class="label-c">Javascript</a>
             </div>
-            <div class="job-type">
-                Internship
-            </div>
+            <div class="job-type">Full-Time</div>
         </div>
 
 
@@ -388,7 +363,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, suscipit ipsam? Ullam natus eveniet esse
                 fugiat saepe iste</p>
         </div>
-        <button class="join-button">Join Now</button>
+    
 
     </section>
 </body>
@@ -397,16 +372,45 @@
     function search() {
   var filter = document.getElementById("search-job").value.toUpperCase();
   var filter2 = document.getElementById("job-function").value.toUpperCase();
+  var filter3 = document.getElementById("job-level").value.toUpperCase();
+  var filter4 = document.getElementById("employment").value.toUpperCase();
   var jobs = document.getElementsByClassName("job-card");
-
 
   for (var i = 0; i < jobs.length; i++) {
     var jobTitle = jobs[i].getElementsByClassName("job-detail")[0].getElementsByTagName("h3")[0];
     var keywords = jobs[i].getElementsByClassName("job-label")[0].getElementsByTagName("a");
-    var jobfunction = jobs[i].getElementsByClassName("j")
+    var jobfunction = jobs[i].getElementsByClassName("job-function")[0].getElementsByTagName("a")[0];
+    var joblevel = jobs[i].getElementsByClassName("job-level")[0].getElementsByTagName("a")[0];
+    var employment = jobs[i].getElementsByClassName("job-type")[0];
     var found = false;
+    var found2 = false;
+    var found3 = false;
+    var found4 = false;
+    console.log(employment.innerHTML.toUpperCase())
 
-    if (jobTitle.innerHTML.toUpperCase().indexOf(filter) > -1) {
+     if(employment.innerHTML.toUpperCase().indexOf(filter4) > -1){
+         found4=true;
+     }else{
+         found4=false;
+     }
+
+
+    
+
+     if(joblevel.innerHTML.toUpperCase().indexOf(filter3) > -1){
+         found3=true;
+     }else{
+         found3=false;
+     }
+
+     if(jobfunction.innerHTML.toUpperCase().indexOf(filter2) > -1){
+         found2=true;
+     }else{
+         found2=false;
+     }
+
+     
+      if (jobTitle.innerHTML.toUpperCase().indexOf(filter) > -1) {
       found = true;
     } else {
       for (var j = 0; j < keywords.length; j++) {
@@ -416,20 +420,28 @@
         }
       }
     }
+          
+
+    if (found2&&found3&&found4) {
+      jobs[i].style.display = "";
+    } else {
+      jobs[i].style.display = "none";
+    }
+
 
     if (found) {
       jobs[i].style.display = "";
     } else {
       jobs[i].style.display = "none";
     }
+
+   
+
+
+
   }
 
-}
-
-
-
-
-
+  }
 
 </script>
 
