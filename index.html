@@ -417,7 +417,8 @@ fetch("https://api.countrystatecity.in/v1/countries", requestOptions)
   var filter5 = document.getElementById("location").value.toUpperCase();
   var jobs = document.getElementsByClassName("job-card");
 
-        
+
+        console.log(filter5)
 
   for (var i = 0; i < jobs.length; i++) {
     var jobTitle = jobs[i].getElementsByClassName("job-detail")[0].getElementsByTagName("h3")[0];
@@ -427,45 +428,33 @@ fetch("https://api.countrystatecity.in/v1/countries", requestOptions)
     var employment = jobs[i].getElementsByClassName("job-type")[0];
     var jobdetail = jobs[i].getElementsByClassName("job-detail")[0].getElementsByTagName("h4")[1];
     
-    var found = false;
+    var found = false;    
     var found2 = false;
     var found3 = false;
     var found4 = false;
     var found5 = false;
-
-
-    if(jobdetail.innerHTML.toUpperCase().indexOf(filter5) > -1){
+    if(jobdetail.innerHTML.toUpperCase().indexOf(filter5) > -1 || filter5==''){
          found5=true;
      }else{
          found5=false;
      }
-
-
-
-
-     if(employment.innerHTML.toUpperCase().indexOf(filter4) > -1){
+     if(employment.innerHTML.toUpperCase().indexOf(filter4) > -1 || String(filter4)=='EMPLOYMENT TYPE'){
          found4=true;
      }else{
          found4=false;
      }
-
-
-    
-
-     if(joblevel.innerHTML.toUpperCase().indexOf(filter3) > -1){
+     if(joblevel.innerHTML.toUpperCase().indexOf(filter3) > -1 || String(filter3)=='EXPERIENCE'){
          found3=true;
      }else{
          found3=false;
      }
-
-     if(jobfunction.innerHTML.toUpperCase().indexOf(filter2) > -1){
+     if(jobfunction.innerHTML.toUpperCase().indexOf(filter2) > -1 || String(filter2)=='JOB FUNCTION'){
          found2=true;
      }else{
          found2=false;
-     }
+     } 
 
-     
-      if (jobTitle.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      if (jobTitle.innerHTML.toUpperCase().indexOf(filter) > -1 || filter=='') {
       found = true;
     } else {
       for (var j = 0; j < keywords.length; j++) {
@@ -476,9 +465,13 @@ fetch("https://api.countrystatecity.in/v1/countries", requestOptions)
       }
     }
           
+    console.log(found)
+    console.log(found2)
+    console.log(found3)
+    console.log(found4)
+    console.log(found5)
 
-
-    if (found||(found5&&found4&&found3&&found2)) {
+    if (found&&found5&&found4&&found3&&found2){
       jobs[i].style.display = "";
     } else {
       jobs[i].style.display = "none";
@@ -493,5 +486,4 @@ fetch("https://api.countrystatecity.in/v1/countries", requestOptions)
   }
 
 </script>
-
 </html>
